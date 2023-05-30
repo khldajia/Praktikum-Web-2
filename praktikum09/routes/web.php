@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +38,25 @@ Route::get('/nilai', function () {
 Route::get('/pasien', function () {
     return view('pasien');
 });
+
+// buat routing form
+Route::get('/form', [FormController::class, 'index']);
+
+// buat routing hasil
+Route::post('/hasil', [FormController::class, 'hasil']);
+
+
+Route::get('/skill', function () {
+    return view('skill');
+});
+
+// buat routing hasil skill
+Route::get('/skill', [SkillController::class, 'index']);
+
+// buat routing hasil skill
+Route::post('/hasilskill', [SkillController::class, 'hasilskill']);
+
+
+
+
 
